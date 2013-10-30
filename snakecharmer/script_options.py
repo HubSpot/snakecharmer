@@ -62,7 +62,7 @@ class ScriptOptions(Propertized):
             argv = sys.argv
         parser = OptionParser()
         script_options = cls()
-        letters = set()
+        letters = set(['h'])
 
         for opt in script_options.list_class_props():
 

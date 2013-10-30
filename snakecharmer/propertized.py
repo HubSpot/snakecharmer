@@ -88,6 +88,17 @@ class Propertized(object):
         for key, value in kwargs.items():
             if hasattr(self, key):
                 setattr(self, key, value)
+            else:
+                raise AttributeError("Class " + self.__class__.__name__ + " does not have attribute " + key)
+    def __repr__(self):
+        
+        return '%s(**%s)' % (self.__class__.__name__, repr(self.as_dict()))
+
+    def as_dict(self):
+        d = {}
+        for prop in self.list_class_props():
+            d[prop.attr_name] = getattr(self, prop.attr_name, None)
+        return d
 
     def list_class_props(self):
         props = []
