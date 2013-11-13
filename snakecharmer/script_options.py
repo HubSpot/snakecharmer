@@ -53,7 +53,8 @@ class Opt(Prop):
 
 
 class ScriptOptions(Propertized):
-    def __init__(self):
+    def __init__(self, **kwargs):
+        self._hydrate_from_kwargs(kwargs)
         parser = None
 
     @classmethod
