@@ -54,8 +54,8 @@ class Opt(Prop):
 
 class ScriptOptions(Propertized):
     def __init__(self, **kwargs):
-        self._hydrate_from_kwargs(**kwargs)
         parser = None
+        self._hydrate_from_kwargs(**kwargs)
 
     @classmethod
     def from_argv(cls, argv=None, **defaults):

@@ -105,7 +105,10 @@ class Propertized(object):
         for attr_name in dir(self):
             if attr_name.startswith('_'):
                 continue
-            attr = getattr(self.__class__, attr_name)
+            try:
+                attr = getattr(self.__class__, attr_name)
+            except:
+                continue
             if inspect.ismethod(attr):
                 continue
 
