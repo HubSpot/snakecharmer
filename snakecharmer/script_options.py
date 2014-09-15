@@ -74,7 +74,7 @@ class ScriptOptions(Propertized):
                 args.append('-' + letter)
                 letters.add(letter)
             args.append('--' + opt.attr_name.replace('_', '-'))
-            if opt.default:
+            if opt.default is not None:
                 kwargs['default'] = opt.default
             if opt.attr_name in defaults:
                 kwargs['default'] = defaults[opt.attr_name]
