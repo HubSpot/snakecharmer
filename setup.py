@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='snakecharmer',
-    version='1.0.0',
+    version='1.0.1',
     description="A collection of utilities for working with python",
     long_description=open('README.md').read(),
     author='HubSpot Dev Team',
